@@ -4,7 +4,7 @@ const { db } = require('../../dbexample');
 const databaseMethods = {
   mongodb: {
     get: async (collection) => await connection()
-      .then((db) => db.collection(collection)).find(),
+      .then((db) => db.collection(collection).find().toArray()),
     post: async (collection, data) => await connection()
       .then((db) => db.collection(collection)).insertOne(data),
     put: async (collection, identifier, data) => await connection()
@@ -17,6 +17,5 @@ const databaseMethods = {
   },
 }
 
-modules.export = {
-  databaseMethods,
-}
+module.exports = databaseMethods;
+

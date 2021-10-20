@@ -1,15 +1,16 @@
-function defineGetController(controllers) {
-  // if (controllers) {
-  //   return controllers.get;
+const getAll = require('../models/getModel');
+
+function defineGetController(options) {
+  // if (options.controllers) {
+  //   return options.controllers.get;
   // }
 
-  const getController = (_req, res) => {
-    return res.status(200).json({ message: 'get route ok' });
+  const getController = async (_req, res) => {
+    const list = await getAll(options);
+    return res.status(200).json(list);
   }
 
   return getController;
 }
-
-console.log(defineGetController());
 
 module.exports = defineGetController;
