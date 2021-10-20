@@ -1,0 +1,15 @@
+// dentro do index.js da pessoa usuária
+
+const express = require('express');
+
+const app = express();
+
+const dynamicRoutes = require('dynamic-routes);
+
+app.use(dynamicRoutes(endpoint, validation, table, query, rules));
+
+parâmetros para criação de uma rota:
+
+path,
+lógica de validação (middleware)
+nome do banco de dados (a conexão varia conforme o db)
