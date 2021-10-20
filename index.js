@@ -1,22 +1,30 @@
 const express = require('express');
 
-module.exports = async function createRoutes() {
-  const router =  express.Router;
-  const params = {
-    path: () => 'ok',
-    connection: () => '',
-    method: () => '',
-    services: () => '',
+const options = {
+  pathName: 'users',
+  collection: 'users',
+  controllers: {
+    get: [],
+    post: [],
+    put: [],
+    delete: [],
+  },
+  models: {
+    get: [],
+    post: [],
+    put: [],
+    delete: [],
   }
-
-  return params;
 }
 
-// rota para o Path informado => GET,PUT,POST,DELETE
+module.exports = async function createRoutes(options) {
+  const router =  express.Router;
 
-paramObject = [{path}]
+  router.get(`/${options.pathName}`, [...controllers.get]);
+  router.post(`/${options.pathName}`, [...controllers.post]);
+  router.put(`/${options.pathName}`, [...controllers.put]);
+  router.delete(`/${options.pathName}`, [...controllers.delete])
 
-// GET: find()
-// PUT: updateOne()
-// POST: insertOne()
-// DELETE: removeONe()
+  return router;
+}
+
