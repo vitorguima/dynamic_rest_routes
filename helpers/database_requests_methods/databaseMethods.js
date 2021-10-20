@@ -1,4 +1,4 @@
-const connection = require('./connection');
+const connection = require('../../connection/mongoConnection');
 const { db } = require('../../dbexample');
 
 const databaseMethods = {
