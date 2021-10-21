@@ -10,7 +10,7 @@ const databaseMethods = {
     put: async (collection, identifier, data) => await connection()
       .then((db) => db.collection(collection)).updateOne(identifier, data),
     delete: async (collection, identifier) => await connection()
-      .then((db) => db.collection(collection)).removeOne(identifier),
+      .then((db) => db.collection(collection).deleteOne(identifier)),
   },
   db: {
     get: (tableName) => Object.values(db[tableName].DATA)
@@ -18,4 +18,3 @@ const databaseMethods = {
 }
 
 module.exports = databaseMethods;
-

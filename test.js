@@ -4,14 +4,17 @@ const createRoutes = require('./createRoute');
 const app = express();
 
 const options = {
-  path: 'users',
+  path: 'clientes',
   database: 'mongodb',
-  collection: 'air_airlines',
-  controllers: 'undefined',
+  collection: 'clientes',
+  controllers: [],
+  req: {
+    body: {},
+    params: 'id',
+  }
 }
 
 app.use(express.json());
 app.use(createRoutes(options));
-
 
 app.listen(3000, () => console.log('rodando porta 3000'));

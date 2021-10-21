@@ -5,8 +5,8 @@ const OPTIONS = {
     useUnifiedTopology: true,
 };
 
-const MONGO_DB_URL = 'mongodb://localhost:27017/aggregations';
-const DB_NAME = 'aggregations';
+const MONGO_DB_URL = 'mongodb://localhost:27017/deucredito';
+const DB_NAME = 'deucredito';
 
 let db = null;
 

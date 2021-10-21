@@ -1,6 +1,6 @@
-const databaseMethods = require('../helpers/database_requests_methods/genericMethods');
+const databaseMethods = require('../helpers/database_requests_methods/databaseMethods');
 
-async function getAll(options) {
+async function post(options) {
   try {
     const list = await databaseMethods[options.database].get(options.collection)
     return list;
@@ -14,4 +14,4 @@ async function getAll(options) {
   }
 }
 
-module.exports = getAll;
+module.exports = post;

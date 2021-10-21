@@ -1,14 +1,16 @@
 const express = require('express');
 
 const defineGetController = require('./controllers/getController');
+const defineDeleteController = require('./controllers/deleteController');
 
 function createRoutes(options) {
   const router =  express.Router();
 
   router.get(`/${options.path}`, defineGetController(options));
-  router.post(`/${options.pathName}`);
-  router.put(`/${options.pathName}`);
-  router.delete(`/${options.pathName}`)
+  router.get(`/${options.path}/:${options.req.params}`);
+  router.delete(`/${options.path}/:${options.req.params}`, defineDeleteController(options));
+  router.post(`/${options.path}`);
+  router.put(`/${options.path}/:${options.req.params}`);
 
   return router;
 }
