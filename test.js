@@ -7,11 +7,12 @@ const options = {
   path: 'clientes',
   database: 'mongodb',
   collection: 'clientes',
-  controllers: [],
   req: {
     body: {},
     params: 'id',
-  }
+  },
+  controllers: {},
+  models: {},
 }
 
 app.use(express.json());
