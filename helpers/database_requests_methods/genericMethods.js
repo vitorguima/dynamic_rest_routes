@@ -5,6 +5,8 @@ const databaseMethods = {
   mongodb: {
     get: async (collection) => await connection()
       .then((db) => db.collection(collection).find().toArray()),
+    getById: async (collection, identifier) => await connection()
+      .then((db) => db.collection(collection).find(identifier).toArray()),
     post: async (collection, data) => await connection()
       .then((db) => db.collection(collection)).insertOne(data),
     put: async (collection, identifier, data) => await connection()

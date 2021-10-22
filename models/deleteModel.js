@@ -4,7 +4,7 @@ const databaseMethods = require('../helpers/database_requests_methods/genericMet
 async function remove(options, params) {
   const { collection } = options;
   const deleteParam = { _id: ObjectId(params.id) };
-  console.log(deleteParam);
+
   try {
     await databaseMethods[options.database].delete(collection, deleteParam);
     return {
