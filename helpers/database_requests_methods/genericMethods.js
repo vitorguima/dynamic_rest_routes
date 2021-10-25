@@ -8,9 +8,9 @@ const databaseMethods = {
     getById: async (collection, identifier) => await connection()
       .then((db) => db.collection(collection).find(identifier).toArray()),
     post: async (collection, data) => await connection()
-      .then((db) => db.collection(collection)).insertOne(data),
+      .then((db) => db.collection(collection).insertOne(data)),
     put: async (collection, identifier, data) => await connection()
-      .then((db) => db.collection(collection)).updateOne(identifier, data),
+      .then((db) => db.collection(collection).updateOne(identifier, { $set: { ...data }})),
     delete: async (collection, identifier) => await connection()
       .then((db) => db.collection(collection).deleteOne(identifier)),
   },

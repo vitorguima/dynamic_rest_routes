@@ -1,9 +1,8 @@
-const databaseMethods = require('../helpers/database_requests_methods/databaseMethods');
+const databaseMethods = require('../helpers/database_requests_methods/genericMethods');
 
-async function post(options) {
+async function post(options, body) {
   try {
-    const list = await databaseMethods[options.database].get(options.collection)
-    return list;
+    await databaseMethods[options.database].post(options.collection, body);
   } catch {
     return {
       err: {
