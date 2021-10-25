@@ -1,6 +1,6 @@
 {
   "name": "rest-routes-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "lib to create dynamic rest routes",
   "main": "index.js",
   "scripts": {
