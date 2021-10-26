@@ -2,6 +2,7 @@ const { ObjectId } = require('mongodb');
 const databaseMethods = require('../../helpers/database_requests_methods/genericMethods');
 
 async function getById(options, params) {
+  const mongoIdSize = 24;
   const { 
     collection,
     database,
@@ -10,7 +11,7 @@ async function getById(options, params) {
 
   let getParam = params[options.req.params];
 
-  if (getParam.length === 24) {
+  if (getParam.length === mongoIdSize) {
     getParam = { _id: ObjectId(params[options.req.params]) }
   }
   

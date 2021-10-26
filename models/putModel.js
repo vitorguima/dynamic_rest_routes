@@ -2,11 +2,12 @@ const { ObjectId } = require('mongodb');
 const databaseMethods = require('../helpers/database_requests_methods/genericMethods');
 
 async function put(options, params, data) {
+  const mongoIdSize = 24;
   const { collection, databaseName } = options;
 
   let updateParam = params[options.req.params];
 
-  if (updateParam.length === 24) {
+  if (updateParam.length === mongoIdSize) {
     updateParam = { _id: ObjectId(params[options.req.params]) }
   }
 
