@@ -1,6 +1,6 @@
 # Rest routes creator
 
-Rest routes creator is a Javascript library to acelerate the process of creating routes with the [express framework](https://github.com/expressjs/express). It will return the methods GET, POST, PUT and DELETE for an specific endpoint. There are no default validations for your routes but you can create custom middlewares for it.
+Rest routes creator is a Javascript library to accelerate the process of creating routes with the [express framework](https://github.com/expressjs/express). It will return the methods GET, POST, PUT and DELETE for an specific endpoint. There are no default validations for your routes but you can create custom middlewares for it.
 
 ## Installation
 
