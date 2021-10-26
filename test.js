@@ -1,6 +1,9 @@
 const express = require('express');
 const createRoutes = require('./createRoute');
 const app = express();
+
+const testMiddleware = require('./middlewares/testMiddleware');
+
 const options = {
   path: 'clientes',
   database: 'db',
@@ -23,10 +26,9 @@ const options2 = {
     params: 'id',
   },
   validations: {
-    get: [],
     getById: [],
     delete: [],
-    post: [],
+    post: [testMiddleware],
     put: [],
   },
   controllers: [],
@@ -34,6 +36,5 @@ const options2 = {
 };
 
 app.use(express.json());
-// app.use(createRoutes(options));
 app.use(createRoutes(options2))
 app.listen(3000, () => console.log('rodando porta 3000'));

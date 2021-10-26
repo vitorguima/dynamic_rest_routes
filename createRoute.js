@@ -1,10 +1,5 @@
 const express = require('express');
 
-// const getController = require('./controllers/getController');
-// const deleteController = require('./controllers/deleteController');
-// const postController = require('./controllers/postController');
-// const putController = require('./controllers/putController');
-
 const getRoute = require('./helpers/routes_middleware_validations/getRoute');
 const getByIdRoute = require('./helpers/routes_middleware_validations/getByIdRoute');
 const deleteRoute = require('./helpers/routes_middleware_validations/deleteRoute');
@@ -15,7 +10,7 @@ function createRoutes(options) {
   const router =  express.Router();
   const mininumLength = 1;
 
-  getRoute(options, router, mininumLength);
+  getRoute(options, router);
   getByIdRoute(options, router, mininumLength);
   deleteRoute(options, router, mininumLength);
   postRoute(options, router, mininumLength);
