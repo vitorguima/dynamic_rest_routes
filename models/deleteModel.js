@@ -2,11 +2,11 @@ const { ObjectId } = require('mongodb');
 const databaseMethods = require('../helpers/database_requests_methods/genericMethods');
 
 async function remove(options, params) {
-  const { collection } = options;
+  const { collection, databaseName } = options;
   const deleteParam = { _id: ObjectId(params.id) };
 
   try {
-    await databaseMethods[options.database].delete(collection, deleteParam);
+    await databaseMethods[options.database].delete(collection, deleteParam, databaseName);
     return {
       _id: params,
     };

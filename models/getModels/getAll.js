@@ -3,11 +3,12 @@ const databaseMethods = require('../../helpers/database_requests_methods/generic
 async function getAll(options) {
   const { 
     collection, 
-    database, 
+    database,
+    databaseName
   } = options;
 
   try {
-    const list = await databaseMethods[database].get(collection)
+    const list = await databaseMethods[database].get(collection, databaseName)
     return list;
   } catch {
     return {

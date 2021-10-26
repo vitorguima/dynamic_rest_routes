@@ -2,7 +2,7 @@ const { ObjectId } = require('mongodb');
 const databaseMethods = require('../helpers/database_requests_methods/genericMethods');
 
 async function put(options, params, data) {
-  const { collection } = options;
+  const { collection, databaseName } = options;
 
   let updateParam = params[options.req.params];
 
@@ -11,7 +11,7 @@ async function put(options, params, data) {
   }
 
   try {
-    await databaseMethods[options.database].put(collection, updateParam, data);
+    await databaseMethods[options.database].put(collection, updateParam, data, databaseName);
     return {
       _id: params,
     };

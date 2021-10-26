@@ -5,6 +5,7 @@ async function getById(options, params) {
   const { 
     collection,
     database,
+    databaseName
   } = options;
 
   let getParam = params[options.req.params];
@@ -14,7 +15,7 @@ async function getById(options, params) {
   }
   
   try {
-    const list = await databaseMethods[database].getById(collection, getParam);
+    const list = await databaseMethods[database].getById(collection, getParam, databaseName);
     return list;
   } catch {
     return {
