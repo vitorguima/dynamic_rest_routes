@@ -7,7 +7,7 @@ async function put(options, params, data) {
   let updateParam = params[options.req.params];
 
   if (updateParam.length === 24) {
-    getParam = { _id: ObjectId(params[options.req.params]) }
+    updateParam = { _id: ObjectId(params[options.req.params]) }
   }
 
   try {
