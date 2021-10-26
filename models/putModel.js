@@ -3,7 +3,12 @@ const databaseMethods = require('../helpers/database_requests_methods/genericMet
 
 async function put(options, params, data) {
   const { collection } = options;
-  const updateParam = { _id: ObjectId(params.id) };
+
+  let updateParam = params[options.req.params];
+
+  if (updateParam.length === 24) {
+    getParam = { _id: ObjectId(params[options.req.params]) }
+  }
 
   try {
     await databaseMethods[options.database].put(collection, updateParam, data);

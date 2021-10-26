@@ -6,10 +6,15 @@ async function getById(options, params) {
     collection,
     database,
   } = options;
-  const getParam = { _id: ObjectId(params.id) };
 
+  let getParam = params[options.req.params];
+
+  if (getParam.length === 24) {
+    getParam = { _id: ObjectId(params[options.req.params]) }
+  }
+  
   try {
-    const list = await databaseMethods[database].getById(collection, getParam)
+    const list = await databaseMethods[database].getById(collection, getParam);
     return list;
   } catch {
     return {

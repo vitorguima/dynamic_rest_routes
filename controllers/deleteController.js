@@ -1,6 +1,6 @@
 const remove = require('../models/deleteModel');
 
-module.exports = function defineDeleteController(options) {  
+function deleteController(options) {  
   const deletController = async (req, res) => {
     const { params } = req;
     const removedData = await remove(options, params);
@@ -9,3 +9,5 @@ module.exports = function defineDeleteController(options) {
 
   return deletController;
 };
+
+module.exports = deleteController;
