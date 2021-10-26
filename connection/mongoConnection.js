@@ -7,7 +7,6 @@ const OPTIONS = {
 
 const MONGO_DB_URL = 'mongodb://localhost:27017/';
 
-
 let db = null;
 
 const connection = (databaseName) => (db
