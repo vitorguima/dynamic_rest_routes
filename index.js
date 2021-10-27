@@ -8,13 +8,13 @@ const putRoute = require('./helpers/routes_middleware_validations/putRoute');
 
 function createRoutes(options) {
   const router =  express.Router();
-  const mininumLength = 1;
+  const mininumCallbacksQty = 1;
 
   getRoute(options, router);
-  getByIdRoute(options, router, mininumLength);
-  deleteRoute(options, router, mininumLength);
-  postRoute(options, router, mininumLength);
-  putRoute(options, router, mininumLength);
+  getByIdRoute(options, router, mininumCallbacksQty);
+  deleteRoute(options, router, mininumCallbacksQty);
+  postRoute(options, router, mininumCallbacksQty);
+  putRoute(options, router, mininumCallbacksQty);
 
   return router;
 }

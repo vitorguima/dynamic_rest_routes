@@ -2,9 +2,9 @@
   "name": "rest-routes-creator",
   "version": "1.0.3",
   "description": "lib to create dynamic rest routes",
-  "main": "createRoute.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vitorguima",
   "license": "ISC",
