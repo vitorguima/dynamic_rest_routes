@@ -1,6 +1,6 @@
 # Rest routes creator
 
-Rest routes creator is a Javascript library to acelerate the process of creating routes with the [express framework](https://github.com/expressjs/express). It will return the methods GET, POST, PUT and DELETE for an specific endpoint. There are no default validations for your routes but you can create custom middlewares for it.
+Rest routes creator is a Javascript library to accelerate the process of creating routes with the [express framework](https://github.com/expressjs/express). It will return the methods GET, POST, PUT and DELETE for an specific endpoint. There are no default validations for your routes but you can create custom middlewares for them.
 
 ## Installation
 
@@ -16,14 +16,14 @@ Set a default node-express application and use the **rest-routes-creator** follo
 
 ```javascript
 const express = require('express');
-const createRoutes = require('./createRoute');
+const createRoutes = require('rest-routes-creator');
 const app = express();
 
 const options = {
   path: 'route path name',
   database: 'mongodb',
   databaseName: 'name of the database your collection is in',
-  collection: 'name of the colletion your documents is in',
+  collection: 'name of the colletion your documents are in',
   req: {
     params: 'name of the param your middleware will receive on "req" object',
   },
@@ -45,7 +45,7 @@ app.listen(3000, () => console.log('rodando porta 3000'));
 ## Comments about the current state of this library
 - Allows users to create as many routes as they want (no problems instantiating this lib more than once).
 - Works only with mongodb connections (this part stills hardcoded).
-- Allows the user to create custom middleware for it's generated routes.
+- Allows the user to create custom middlewares for it's generated routes.
 - Models follows a default pattern that can't be changed at the moment (this part stills hardcoded).
 
 ## License
